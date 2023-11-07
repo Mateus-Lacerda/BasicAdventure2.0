@@ -1,4 +1,4 @@
-from BasicAdventure import main
+from BasicAdventure2_0 import main
 
 class player:
     
