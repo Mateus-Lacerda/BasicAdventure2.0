@@ -29,26 +29,24 @@ def load_chest_sound():
     mixer.music.set_volume(1)
     mixer.music.play()
 
-#Sons das salas falta som de canto escuro, de poçao e de 
+#Sons das salas falta som de poçao e de saldação do primeiro esqueleto
+def load_start_sound():
+    mixer.init()
+    mixer.music.load('sounds/start.mp3')
+    mixer.music.set_volume(1)
+    mixer.music.play()
+
 def load_rooms_sound():
   mixer.init()
   mixer.music.load('sounds/rooms_sound.mp3')
   mixer.music.set_volume(1)
   mixer.music.play()
 
-def stop_rooms_sound():
-  mixer.init()
-  mixer.music.stop()
-
 def load_battle_sound():
   mixer.init()
   mixer.music.load('sounds/battle.mp3')
   mixer.music.set_volume(1)
   mixer.music.play()
-
-def stop_battle_sound():    
-  mixer.init()
-  mixer.music.stop()
 
 def load_dark_corner_sound():
     mixer.init()
@@ -59,8 +57,12 @@ def load_dark_corner_sound():
 def load_victory_sound():
   mixer.init()
   mixer.music.load('sounds/victory.mp3')
-  mixer.music.set_volume(1)
+  mixer.music.set_volume(2)
   mixer.music.play()
+
+def stop_sound():
+  mixer.init()
+  mixer.music.stop()
 
 #Som dos inimigos
 def load_bat_sound():
@@ -86,12 +88,14 @@ def stop_boss_sound():
     mixer.music.stop()
 
 def main():
-    mixer.init()
+    a.title_ascii()
+    load_start_sound()
     ## Criação de personagem 
-    print("\033[34mBem vindo ao BasicAdventure! Um jogo genérico de aventura, feito como um teste para exercitar conceitos de Python, divirta-se!\n","_"*125,"\033[m")
+    print("\033[34mBem vindo! Esse é um jogo genérico de aventura, feito como um teste para exercitar conceitos de Python, e agora melhorado, com música e arte visual em ASCII, divirta-se!\n","_"*167,"\033[m")
     time.sleep(2)
-    player = p.player(input("Escolha entre as classes guerreiro ou mago, digite \"g\" ou \"m\": \nMagos dão mais dano, mas têm menos vida. ").lower().strip()[0])
-    boss = bo.boss(input("Quem é seu maior inimigo? \n"), input("Qual é o seu maior medo? "))
+    player = p.player(input("Escolha entre as classes Guerreiro ou Mago: \n\033[33mMagos dão mais dano, mas têm menos vida...\033[m \n\033[34mGerreiros tem espadas.\033[m \n").lower().strip()[0])
+    player.set_attack_type(input("Escolha um nome para sua arma: \n"))
+    boss = bo.boss(input("Quem é seu maior inimigo? \n"), input("Qual é o seu maior medo? \n"))
     time.sleep(1)
     a.clean()
 
@@ -131,7 +135,6 @@ def main():
     a.intro_ascii2(player.p_class)
     print(f"Isso lhe enfurece mas te enche de energia, agora você lembra que seu nome é {player.name} e você é um {player.p_class} destemido.\n")
     time.sleep(5)
-    a.intro_ascii3()
     print(f"Isso deve ser coisa do {boss.name}, vou encontrá-lo!\n")
     time.sleep(3)
     print("Você observa a sala ao seu redor para achar uma saída.")
@@ -165,7 +168,7 @@ def main():
 
     def boss_room():
         time.sleep(2)
-        stop_rooms_sound()
+        stop_sound()
         load_boss_sound()
         print("\033[35mOlá.")
         time.sleep(2)
@@ -187,6 +190,7 @@ def main():
                     time.sleep(2)
                     print("Vocês conversam sobre as aventuras que você percorreu até aqui, sobre os monstros, armadilhas e...\033[m")
                     time.sleep(2)
+                    stop_sound()
                     print("\033[31mPera aí!")
                     time.sleep(1)
                     print("Porque tantos monstros e armadilhas, se ele só queria fazer as pazes? Tem coisa errada aí.")
@@ -195,8 +199,9 @@ def main():
                     time.sleep(2)
                     print("E o apunhala pelas costas.\033[m")
                     time.sleep(2)
+                    load_victory_sound()
                     print("\033[34mJogo zerado pacifista!\033[m")
-                    time.sleep(2)
+                    time.sleep(6)
                     credits()
                     choice_7 = input("Jogar de novo? Digite s ou n para responder: ")
                         
@@ -217,7 +222,7 @@ def main():
                 
             case "2":
                 def ending_2():
-                    print("\033[31mMuito bem... Eu estava mentindo de qualquer forma, hahaha...")
+                    print("\033[31mMuito bem... Eu estava mentindo de qualquer forma, hahaha...\033[m")
                     time.sleep(2)
                     print('_'*20)
                     stop_boss_sound()
@@ -226,22 +231,23 @@ def main():
                     time.sleep(2)
 
                     while boss.life >= 0 and player.life >=0:
-                        print(f"Você ataca com {player.attack_type}! ")
+                        print(f"\033[34mVocê ataca com {player.attack_type}! \033[m")
                         boss.life -= player.strength
                         time.sleep(2)
-                        print(f"{boss.name} te ataca com {boss.attack_type}\033[m")
+                        print(f"\033[35m{boss.name} te ataca com {boss.attack_type}\033[m")
                         player.life -= boss.strength
                         time.sleep(2)
 
-                    if player.life >= 0:
-                        stop_battle_sound()
+                    if player.life >= 0 and boss.life <= 0:
+                        stop_sound()
+                        time.sleep(2)
                         load_victory_sound()
-                        time.sleep(1)
-                        load_boss_sound()
+                        time.sleep(1.5)
                         print("\033[34mParabéns, você destruiu seu maior inimigo, enfrentando seus maiores medos!\033[m")
                         time.sleep(2)
                         print("\033[31mJogo zerado sanguinário!\033[m")
                         time.sleep(2)
+                        load_boss_sound()
                         credits()
                         choice_8 = input("Jogar de novo? Digite s ou n para responder: ")
                         
@@ -269,11 +275,9 @@ def main():
 
     def fourth_room():
         time.sleep(2)
-        stop_rooms_sound()
-        load_rooms_sound()
-        print("_"*20,"\nQuarta sala.")
-        show_status()
-        time.sleep(2)    
+        a.fourth_room_ascii(player.life, player.strength, player.name, player.p_class, boss.attack_type)
+        stop_sound()
+        load_rooms_sound() 
         print("Você tem 5 opções:\n1- Ir à segunda sala.\n2- Ir à terceira sala.\n3- Há dois esqueletos em frente a uma porta, lutar?\n4- Há um canto escuro, explorar?"
                         "\n5- Abrir baú.")
         time.sleep(2)    
@@ -281,14 +285,14 @@ def main():
 
         match choice_4:
             case "1":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você decide ir à  segunda sala.")
                 time.sleep(2)
                 second_room()
                 
             case "2":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você decide ir à terceira sala.")
                 time.sleep(2)
@@ -298,11 +302,11 @@ def main():
                 print("Você decide enfrentar os dois esqueletos!")
                 time.sleep(2)
                 if fth_room.squeleton1 == True and fth_room.squeleton2 == True:
-                    stop_rooms_sound()
+                    stop_sound()
                     print('_'*20)
                     print("Entrando em batalha! ")
                     load_squeleton_sound()
-                    time.sleep(1)
+                    time.sleep(2)
                     load_battle_sound()
                     a.squeleton_battle_ascii(player.life, player.strength, player.name, player.p_class, boss.attack_type)
                         
@@ -318,19 +322,17 @@ def main():
                     fth_room.squeleton1 = False
                         
                     if squeleton_2.life <= 0:
-                        stop_battle_sound()
-                        load_victory_sound()
                         a.squeleton_death_ascii()
                         time.sleep(2)                                                
 
                     if player.life <= 0:
                         death()
 
-                    stop_rooms_sound()
+                    stop_sound()
                     print('_'*20)
                     print("Entrando em batalha! ")
                     load_squeleton_sound()
-                    time.sleep(1)
+                    time.sleep(2)
                     load_battle_sound()
                     a.squeleton_battle_ascii(player.life, player.strength, player.name, player.p_class, boss.attack_type)
                     
@@ -346,7 +348,7 @@ def main():
                     fth_room.squeleton2 = False
                         
                     if squeleton_3.life <= 0:
-                        stop_battle_sound()
+                        stop_sound()
                         load_victory_sound()
                         a.squeleton_death_ascii()
                         time.sleep(2)           
@@ -383,12 +385,14 @@ def main():
                     fourth_room()
 
             case "4":
-                stop_rooms_sound()
+                stop_sound()
                 load_dark_corner_sound()
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
                 
                 if fth_room.corner == True:
+                    stop_sound()
+                    load_victory_sound()
                     print("Você achou um item de força, sua força aumenta!")
                     player.strength += random.randint(1,5)
                     fth_room.corner = False
@@ -403,7 +407,7 @@ def main():
             
             case "5":
                 print("Você decide abrir o baú.")
-                stop_rooms_sound()
+                stop_sound()
                 load_chest_sound()
                 a.chest_ascii()
                 time.sleep(2)
@@ -411,6 +415,7 @@ def main():
                 if fth_room.chest == True:
                     cure = random.randint(5,20)
                     player.life += cure
+                    load_victory_sound()
                     a.potion_ascii("cura", cure)
                     print("Você achou uma poção de cura! ")
                     fth_room.chest = False
@@ -431,40 +436,40 @@ def main():
                             
     def third_room():
         time.sleep(2)
-        stop_rooms_sound()
+        stop_sound()
         load_rooms_sound()
         print("_"*20,"\nTerceira sala.")
         show_status()
         time.sleep(2)    
-        print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Ir à segunda sala.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
+        print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Ir à segunda sala.\n3- Abrir a porta à sua direita.\n4- Há um canto escuro, explorar?"
                             "\n5- Abrir o baú.")
         time.sleep(2)    
         choice_4 = input("Digite 1, 2, 3, 4 ou 5 para escolher sua ação. ")
 
         match choice_4:
             case "1":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você decide ir à  primeira sala")
                 time.sleep(2)
                 first_room()
                 
             case "2":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você decide ir à segunda sala.")
                 time.sleep(2)
                 second_room()
 
             case "3":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você decide abrir a porta a sua frente.")
                 time.sleep(2)
                 fourth_room()
 
             case "4":
-                stop_rooms_sound()
+                stop_sound()
                 load_dark_corner_sound()
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
@@ -472,7 +477,7 @@ def main():
                 time.sleep(2)
                     
                 if t_room.bat == True:
-                    stop_rooms_sound()
+                    stop_sound()
                     print('_'*20)
                     print("Entrando em batalha! ")                    
                     load_bat_sound()
@@ -493,7 +498,7 @@ def main():
                     t_room.bat = False
                     
                     if bat_2.life <= 0:
-                        stop_battle_sound()
+                        stop_sound()
                         load_victory_sound()
                         a.bat_death_ascii()
                         time.sleep(2)
@@ -510,7 +515,7 @@ def main():
                     
             case "5":
                 print("Você decide abrir o baú...")
-                stop_rooms_sound()
+                stop_sound()
                 load_chest_sound()
                 a.chest_ascii()
                     
@@ -536,30 +541,30 @@ def main():
     def first_room():
         time.sleep(2)
         a.first_room_ascii(player.life, player.strength, player.name, player.p_class, boss.attack_type)
-        stop_rooms_sound()
+        stop_sound()
         load_rooms_sound()
         print("Você tem 4 opções:\n1- Abrir a porta à sua direita.\n2- Abrir a porta à sua frente.\n3- Há um canto escuro, explorar?"
-              "\n4- Abrir o baú á sua esquerda.")
+              "\n4- Abrir o baú")
         time.sleep(2)    
         choice_2 = input("Digite 1, 2, 3 ou 4 para escolher sua ação. ")
         
         match choice_2:
             case "1":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você escolhe entrar na porta a sua direita. ")
                 time.sleep(2)
                 second_room()
             
             case "2":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você escolhe entrar na porta à sua frente. ")
                 time.sleep(2)
                 third_room()
             
             case "3":
-                stop_rooms_sound()
+                stop_sound()
                 load_dark_corner_sound()
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
@@ -567,7 +572,7 @@ def main():
                 time.sleep(2)
                 
                 if fst_room.bat == True:
-                    stop_rooms_sound()
+                    stop_sound()
                     print('_'*20)
                     print("Entrando em batalha! ")
                     load_bat_sound()
@@ -588,7 +593,7 @@ def main():
                     fst_room.bat = False
                     
                     if bat_1.life <= 0:
-                        stop_battle_sound()
+                        stop_sound()
                         load_victory_sound()
                         a.bat_death_ascii()
                         time.sleep(2)
@@ -605,13 +610,14 @@ def main():
 
             case "4":  
                 print("Você decide abrir o baú...")
-                stop_rooms_sound()
+                stop_sound()
                 load_chest_sound()
                 a.chest_ascii()
                 if fst_room.chest == True:
                     time.sleep(2)
                     cure = random.randint(5,20)
                     player.life += cure
+                    load_victory_sound()
                     a.potion_ascii("cura", cure)
                     print("Vocẽ achou uma poção de cura! ")
                     fst_room.chest = False
@@ -632,41 +638,43 @@ def main():
     def second_room():
         time.sleep(2)
         a.second_room_ascii(player.life, player.strength, player.name, player.p_class, boss.attack_type)
-        stop_rooms_sound()
+        stop_sound()
         load_rooms_sound()    
-        print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Abrir a porta à sua direita.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
+        print("Você tem 5 opções:\n1- Ir à primeira sala.\n2- Abrir a porta à sua esquerda.\n3- Abrir a porta à sua frente.\n4- Há um canto escuro, explorar?"
                         "\n5- Conversar com uma figura humanóide presente.")
         time.sleep(2)    
         choice_3 = input("Digite 1, 2, 3, 4 ou 5 para escolher sua ação. ").lower()
         
         match choice_3:
             case "1":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você decide voltar.")
                 first_room()
             
             case "2":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você escolhe entrar na porta a sua direita. ")
                 time.sleep(2)
                 third_room()
             
             case "3":
-                stop_rooms_sound()
+                stop_sound()
                 load_doors_sound()
                 print("Você escolhe entrar na porta à sua frente. ")
                 time.sleep(2)
                 fourth_room()
             
             case "4":
-                stop_rooms_sound()
+                stop_sound()
                 load_dark_corner_sound()
                 print("Você decide explorar o canto escuro...")
                 time.sleep(2)
                 
                 if s_room.corner == True:
+                    stop_sound()
+                    load_victory_sound()
                     print("Você achou um item de força, sua força aumenta!")
                     player.strength += random.randint(1,5)
                     s_room.corner = False
@@ -679,19 +687,18 @@ def main():
                     second_room()
 
             case "5":
-                stop_rooms_sound()
-                load_greeting_sound()  
+                stop_sound()
                 print("Você decide falar com a figura humanóide...")
                 time.sleep(2)
                 print("Você achou um esqueleto!")
                 time.sleep(2)
                 
                 if s_room.squeleton == True:
-                    stop_rooms_sound()
+                    stop_sound()
                     print('_'*20)
                     print("Entrando em batalha! ")
                     load_squeleton_sound()
-                    time.sleep(1)
+                    time.sleep(2)
                     load_battle_sound()
                     a.squeleton_battle_ascii(player.life, player.strength, player.name, player.p_class, boss.attack_type)
                     
@@ -707,8 +714,8 @@ def main():
                     s_room.squeleton = False
                     
                     if squeleton_1.life <= 0:
+                        stop_sound()
                         load_victory_sound()
-                        stop_battle_sound()
                         a.squeleton_death_ascii()
                         time.sleep(2)  
                         second_room()

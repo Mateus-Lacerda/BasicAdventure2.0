@@ -1,33 +1,48 @@
-                             ______________________________________________________
-                            /|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|\
-                           /#|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|#\
-                          /##|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|##\
-                         /###|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|###\
-                        /####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|####\
-                       /#####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|#####\
-                      /######|WWWWWWWWWWWWWWWWWWWW|3 - LUTAR|WWWWWWWWWWWWWWWWWWWWW|######\
-                     /#######|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|#######\
-                    /########|WW.-.WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW.-.WW|########\
-                   /#########|W(o.o)WWWWWWWWWWW)WWWWW.----.WWWWW)WWWWWWWWWWW(o.o)W|#########\
-                  /##########|WW|=|WWWWWWWWWWW(_)WW,'  ||  `.WW(_)WWWWWWWWWWW|=|WW|##########\
-                 /###########|W__|__WWWWWWWWWW| |WI    ||    IW| |WWWWWWWWWW__|__W|###########\
-                 |###########//.=|=.\\WWWWWWWW| |WI    ||    IW| |WWWWWWWW//.=|=.\\###########|
-                 |##########// .=|=. \\WWWWWWW|_|WI    ||    IW|_|WWWWWWW// .=|=. \\##########|
-                 |#####.-.,#\\ .=|=. //WWWWWWWWWWWI   _||_   IWWWWWWWWWWW\\ .=|=. //#,.-.#####|
-                 |####. |  I#\\(_=_)//WWWWWWWWWWWWI  ' || `  IWWWWWWWWWWWW\\(_=_)//#I  |  .###|
-                 |###I  |  I#|(:| |:(WWWWWWWWWWWWWI    ||    IWWWWWWWWWWWWW(:| |:)|#I  |  I###|
-                 |###I  |  I#|W|| ||WWWWWWWWWWWWWWI    ||    IWWWWWWWWWWWWWW|| ||W|#I  |  I###|
-                 |###I  |  I#|W() ()WWWWWWWWWWWWWWI    ||    IWWWWWWWWWWWWWW() ()W|#I  |  I###|
-                 |###I  |\ I#|W|| ||WWWWWWWWWWWWWWI____||____IWWWWWWWWWWWWWW|| ||W|#I \|  I###|
-                  2|#I \|  I#/ || ||                                        || || \#I  |\ I#|2 - ENTRAR|
-                 |###I  |  I/ ==' '==                                      ==' '== \I  |  I###|
-                 |###I  |  /                                                        \  |  I###|
-                 |###I  | /                                                          \ |  I###|
-                 |###I  |/                                                            \|  I###|
-                 |###I  /                                                              \  I###|
-                 |###I /                                                                \ I###|
-                 |####/                                                                  \####|
-                 |###/                                                                    \###|
-                 |##/                                                                      \##|
-                 |#/                                                                        \#|
-                 |/__________________________________________________________________________\| 
+                                                    ____________________________________________________
+                                                   /|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|\
+                                                  /#|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|#\
+                                                 /##|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|##\
+                                                /###|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|###\
+                                               /####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|####\
+                                              /#####|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|#####\
+                                             /######|WWWWWWWWWWWWWWWWWWW|3 - LUTAR|WWWWWWWWWWWWWWWWWWWW|######\
+                                            /#######|WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW|#######\
+                                           /########|WW.-. WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW.-. W|########\
+                                          /#########|W(o.o) WWWWWWWWW)WWWWW.----.WWWWW)WWWWWWWWWW(o.o) |#########\
+                                         /##########|WW|=|  WWWWWWWW(_)WW,'  ||  `.WW(_)WWWWWWWWWW|=|   ##########\
+            ____________________________/###########|W__|__   WWWWWW| |WI    ||    IW| |WWWWWWWWW__|__   ##########\____________________________
+           /|WWWWWWWWWWWWWWWWWWWWWWWWWWW|###########//.=|=.\\  WWWWW| |WI    ||    IW| |WWWWWWW//.=|=.\\  #########|WWWWWWWWWWWWWWWWWWWWWWWWWWW|\
+          /#|WWWWWWWWWWWWWWWWWWWWWWWWWWW|##########// .=|=. \\  WWWW|_|WI    ||    IW|_|WWWWWW// .=|=. \\  ########|WWWWWWWWWWWWWWWWWWWWWWWWWWW|#\
+         /##|WWWWWWWWWWWWWWWWWWWWWWWWWWW|##########\\ .=|=. //  WWWWWWWWI   _||_   IWWWWWWWWWW\\ .=|=. //  ########|WWWWWWWWWWWWWWWWWWWWWWWWWWW|##\
+        /###|WWWWWWWWWWWWWWWWWWWWWWWWWWW|###########\\(_=_)//  WWWWWWWWWI  ' || `  IWWWWWWWWWWW\\(_=_)//   ########|WWWWWWWWWWWWWWWWWWWWWWWWWWW|###\
+       /####|WWWWWWWWWWWWWWWWWWWWWWWWWWW|###########|(:| |:)  WWWWWWWWWWI    ||    IWWWWWWWWWWWW(:| |:)   #########|WWWWWWWWWWWWWWWWWWWWWWWWWWW|####\
+      /#####|WWWWWWWWWWWW     WWWWWWWWWW|###########|W|| ||  WWWWWWWWWWWI    ||    IWWWWWWWWWWWWW|| ||  ###########|WWWWWWWWWW     WWWWWWWWWWWW|#####\
+     /######|WWWWWWWWWWWW )    WWWWWWWWW|###########|W() ()  WWWWWWWWWWWI    ||    IWWWWWWWWWWWWW() ()  ###########|WWWWWWWWWW )    WWWWWWWWWWW|######\
+    /#######|WWWWWWWWWWWW(_)  WWWWWWWWWW|###########|W|| ||  WWWWWWWWWWWI____||____IWWWWWWWWWWWWW|| ||  ###########|WWWWWWWWWW(_)  WWWWWWWWWWWW|#######\
+   /########|WWWWWWWWWWWW| | WWWWWWWWWWW|###########/ || ||                                      || ||   ##########|WWWWWWWWWW| | WWWWWWWWW|4 - EXPLORAR?| 
+  /#########|WWWWWWWWWWWW| | WWWWWWWWWWW|##########/ ==' '==                                    ==' '==  ##########|WWWWWWWWWW| | WWWWWWWWWWWWW▓#########\
+ /##########|WWWWWWWWWWWW|_| WWWWWWWWWWW|#########/                                                      \#########|WWWWWWWWWW|_| WWWWWWWWWWWWW▓##########\
+/###########|WWWWWWWWWWWWWWWWWWWWWWWWWWW|########/                                                        \########|WWWWWWWWWWWWWWWWWWWWWWWWWW▓▓###########\
+|###########|WWWWWWW|5 - ABRIR?|WwwWWWWW|#######/                                                          \#######|WWWWWWWWWWWWWWWWWWWWWWWWW▓▓▓▓##########|
+|###########|WWWWWW_____________    WWWW|######/                                                            \######|WWWWWWWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓#########|
+|###########|WWWW/______________/\   WWW|#####/                                                              \#####|WWWWWWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓▓#########|
+|###########|WWW(§   § §§§ §   §) )  WWW|####/                                                                \####|WWWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓▓▓▓▓▓########|
+|###########|WWW( § § §§§§§ § § ) /  WWW|###/                                                                  \###|WWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓▓▓▓▓▓▓########|
+|###########|WWW|__§___§§§___§__|//| WWW|##/                                                                    \##|WWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓▓▓▓▓▓▓▓#######|
+|###########|WWW|       M       |//| WWW|#/                                                                      \#|WWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓▓▓▓▓▓▓▓#######|
+|###########|WWW|~~~~~~~~~~~~~~~|/ | WWW|/________________________________________________________________________\|WWWWWWWWWWWWWWWWWW▓▓▓▓▓▓▓▓▓▓▓▓▓▓#######|
+|###########/   |~~~~~~~~~~~~~~~| /                                                                                                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓#######|
+|##########/    |_______________|/                                                                                                    ▓▓▓▓▓▓▓▓▓▓▓▓▓▓#######|
+|#########/                                                                                                                             ▓▓▓▓▓▓▓▓▓▓▓▓#######|
+|########/                                                                                                                                ▓▓▓▓▓▓▓▓▓########|
+|#######/                                                                                                                                    ▓▓▓▓▓ \#######|
+|######/                                                                                                                                            \######|
+|#####/                                                                                                                                              \#####|
+|####/                                                                                                                                                \####|
+|###/                                                                                                                                                  \###|
+|##/                          |2 - TERCEIRA SALA|                                                            |1 - TERCEIRA SALA|                        \##|
+|#/                                   |                                                                              |                                   \#|
+|/____________________________________V______________________________________________________________________________V____________________________________\|
+
+
+
