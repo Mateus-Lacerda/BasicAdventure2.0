@@ -1,6 +1,4 @@
 # BasicAdventure
-A game I've made to test some python concept.
-
 How to run:
 
 WINDOWS:
