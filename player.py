@@ -1,4 +1,4 @@
-from BasicAdventure2_0 import main
+from main import main
 import time
 
 class player:
